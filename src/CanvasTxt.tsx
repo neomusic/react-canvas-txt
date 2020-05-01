@@ -1,41 +1,51 @@
-import * as React from 'react';
+import * as React from 'react'
 import canvasTxt from 'canvas-txt'
 
 export namespace CanvasTxt {
-    export type CanvasTxtProps = {
-        text: string,
-        debug?: boolean;
-        align?: string;
-        vAlign?: string;
-        fontSize?: number;
-        font?: string;
-        lineHeight?: number;
+    export type DrawTxtProps = {
+        debug?: boolean
+        align?: string
+        vAlign?: string
+        fontSize?: number
+        font?: string
+        lineHeight?: number
+        x: number
+        y: number
+        width: number
+        height: number
+    }
+    export type Props = {
+        text: string
+        drawTxtProps?: DrawTxtProps
+        width: number
+        height: number
+        externalCanvasRef?: React.RefObject<JSX.Element | Element | HTMLElement | HTMLCanvasElement>
     }
 }
-export default class CanvasTxt extends React.Component<CanvasTxt.CanvasTxtProps, {}> {
-    canvasEl: any;
+export default class CanvasTxt extends React.Component<CanvasTxt.Props, {}> {
+    ref: React.RefObject<HTMLCanvasElement>
     constructor(props) {
         super(props)
-        this.canvasEl
+        this.ref = React.createRef<HTMLCanvasElement>() || props.externalCanvasRef
     }
 
     componentDidMount() {
-        const ctx = this.canvasEl.getContext('2d')
-        const { debug, align, vAlign, fontSize, font, lineHeight } = this.props
+        const ctx = this.ref.current.getContext('2d')
+        const { debug, align, vAlign, fontSize, font, lineHeight, x, y, width, height } = this.props.drawTxtProps || {}
         canvasTxt.debug = debug
         canvasTxt.align = align
         canvasTxt.vAlign = vAlign
         canvasTxt.fontSize = fontSize
         canvasTxt.font = font
         canvasTxt.lineHeight = lineHeight
-        canvasTxt.drawText(ctx, this.props.text, 100, 200, 200, 200)
+        canvasTxt.drawText(ctx, this.props.text, x, y, width, height)
     }
 
     render() {
-        return (
-            <>
-                <canvas id="myCanvas" width="500" height="500" ref={(el) => this.canvasEl = el}></canvas>
-            </>
-        )
+        const { externalCanvasRef, height, width } = this.props
+        if (externalCanvasRef) {
+            return null
+        }
+        return (<canvas ref={this.ref} height={height} width={width}></canvas>)
     }
 }
