@@ -3,7 +3,13 @@ import canvasTxt from 'canvas-txt'
 
 export namespace CanvasTxt {
     export type CanvasTxtProps = {
-        text: string
+        text: string,
+        debug?: boolean;
+        align?: string;
+        vAlign?: string;
+        fontSize?: number;
+        font?: string;
+        lineHeight?: number;
     }
 }
 export default class CanvasTxt extends React.Component<CanvasTxt.CanvasTxtProps, {}> {
@@ -15,9 +21,13 @@ export default class CanvasTxt extends React.Component<CanvasTxt.CanvasTxtProps,
 
     componentDidMount() {
         const ctx = this.canvasEl.getContext('2d')
-
-        canvasTxt.fontSize = 24
-
+        const { debug, align, vAlign, fontSize, font, lineHeight } = this.props
+        canvasTxt.debug = debug
+        canvasTxt.align = align
+        canvasTxt.vAlign = vAlign
+        canvasTxt.fontSize = fontSize
+        canvasTxt.font = font
+        canvasTxt.lineHeight = lineHeight
         canvasTxt.drawText(ctx, this.props.text, 100, 200, 200, 200)
     }
 
