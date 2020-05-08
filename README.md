@@ -1,5 +1,7 @@
 # React Canvas Txt
 
+[![BCH compliance](https://bettercodehub.com/edge/badge/neomusic/react-canvas-txt?branch=master)](https://bettercodehub.com/)
+
 <div>
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width=100 alt="canvas txt" style="display:inline-block">
 <img src="https://i.imgur.com/Te6TkKz.png" width=400 alt="canvas txt" style="display:inline-block">
