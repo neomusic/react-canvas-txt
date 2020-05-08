@@ -4,11 +4,11 @@ import canvasTxt from 'canvas-txt'
 export namespace CanvasTxt {
     export type DrawTxtProps = {
         debug?: boolean
-        align?: string
-        vAlign?: string
+        align?: "center" | "left"
+        vAlign?: "middle" | "top" | "bottom"
         fontSize?: number
         font?: string
-        lineHeight?: number
+        lineHeight?: number | null
         x: number
         y: number
         width: number
@@ -17,16 +17,14 @@ export namespace CanvasTxt {
     export type Props = {
         text: string
         drawTxtProps?: DrawTxtProps
-        width: number
-        height: number
-        externalCanvasRef?: React.RefObject<JSX.Element | Element | HTMLElement | HTMLCanvasElement>
+        canvasProps?: object
     }
 }
-export default class CanvasTxt extends React.Component<CanvasTxt.Props, {}> {
+export default class CanvasTxt extends React.Component<CanvasTxt.Props, never> {
     ref: React.RefObject<HTMLCanvasElement>
     constructor(props) {
         super(props)
-        this.ref = React.createRef<HTMLCanvasElement>() || props.externalCanvasRef
+        this.ref = React.createRef<HTMLCanvasElement>()
     }
 
     componentDidMount() {
@@ -42,10 +40,7 @@ export default class CanvasTxt extends React.Component<CanvasTxt.Props, {}> {
     }
 
     render() {
-        const { externalCanvasRef, height, width } = this.props
-        if (externalCanvasRef) {
-            return null
-        }
-        return (<canvas ref={this.ref} height={height} width={width}></canvas>)
+        const { canvasProps = {} } = this.props
+        return (<canvas ref={this.ref} {...canvasProps}></canvas>)
     }
 }
