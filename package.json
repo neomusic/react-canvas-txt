@@ -1,11 +1,12 @@
 {
   "name": "react-canvas-txt",
   "version": "1.0.0",
-  "description": "",
+  "description": "React implementation of https://github.com/geongeorge/canvas-txt",
   "scripts": {
     "build": "rm -rf ./dist/** && tsc",
     "watch": "tsc --watch",
-    "test": "jest"
+    "test": "jest",
+    "release": "smooth-release"
   },
   "files": [
     "dist"
@@ -34,12 +35,12 @@
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^25.5.2",
     "react-test-renderer": "^16.13.1",
-    "semantic-release": "^17.0.7",
     "ts-jest": "^25.4.0",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-react": "^5.0.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "smooth-release": "^8.0.9"
   },
   "peerDependencies": {
     "react": "*",
