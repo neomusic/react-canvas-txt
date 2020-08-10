@@ -27,28 +27,32 @@ import ReactCanvasTxt from 'react-canvas-txt'
 
 <ReactCanvasTxt text="Hello World" />
 ```
+### DEMO
+https://codesandbox.io/s/cocky-benz-e4osd
 
 ### Props
 
-| Prop              | Type        | Note  |
-| ----------------- |:-----------:| -----:|
-| text              | string      | The text that will be drawn on the canvas |
-| drawTxtProps      | object      | This object contain a properties for Canvas-Txt library |
+| Prop              | Required    | Type        | Note                                                    |
+| ----------------- |:-----------:|:-----------:| -------------------------------------------------------:|
+| text              | yes         | string      | The text that will be drawn on the canvas               |
+| drawTxtProps      | yes         | object      | This object contain a properties for Canvas-Txt library |
+| width             | yes         | number      | canvas width                                            |
+| height            | yes         | number      | canvas height                                           |
 
 ### Library props
 
-| Prop             | Type                       | Note  |
-| ---------------- |:--------------------------:| -----:|
-| debug            | boolean                    | Shows the border and align gravity for debugging |
-| align            | "center", "left", "right"  | Text align |
-| vAlign           | "middle", "top", "bottom"  | Text vertical align |
-| fontSize         | number                     | Font size of the text in px. *This value cannot be 0* |
-| font             | string                     | Font family of the text |
-| fontStyle        | string                     | Font style, same as css font-style. Examples: `italic`, `oblique 40deg` |
-| fontVariant      | string                     | Font variant, same as css font-variant. Examples: `small-caps`, `slashed-zero` |
-| fontWeight       | string                     | Font weight, same as css font-weight. Examples: `bold`, `100`  |
-| lineHeight       | string *or* null           | Line height of the text, if set to null it tries to auto-detect the value  |
-| x                | number                     | Position of x for text in the canvas  |
-| y                | number                     | Position of y for text in the canvas  |
-| width            | number                     | Width area for text in the canvas. *This value cannot be 0*  |
-| height           | number                     | Height area for text in the canvas. *This value cannot be 0*  |
+| Prop             |  Required |  Type                      |  Note                                                                           |
+| ---------------- | ---------:|:--------------------------:| -------------------------------------------------------------------------------:|
+| fontSize         |  yes      |  number                    |  Font size of the text in px. *This value cannot be 0*                          |
+| x                |  yes      |  number                    |  Position of x for text in the canvas                                           |
+| y                |  yes      |  number                    |  Position of y for text in the canvas                                           |
+| width            |  yes      |  number                    |  Width area for text in the canvas. *This value cannot be 0*                    |
+| height           |  yes      |  number                    |  Height area for text in the canvas. *This value cannot be 0*                   |
+| debug            |  no       |  boolean                   |  Shows the border and align gravity for debugging                               |
+| align            |  no       |  "center", "left", "right" |  Text align                                                                     |
+| vAlign           |  no       |  "middle", "top", "bottom" |  Text vertical align                                                            |
+| font             |  no       |  string                    |  Font family of the text                                                        |
+| fontStyle        |  no       |  string                    |  Font style, same as css font-style. Examples: `italic`, `oblique 40deg`        |
+| fontVariant      |  no       |  string                    |  Font variant, same as css font-variant. Examples: `small-caps`, `slashed-zero` |
+| fontWeight       |  no       |  string                    |  Font weight, same as css font-weight. Examples: `bold`, `100`                  |
+| lineHeight       |  no       |  string *or* null          |  Line height of the text, if set to null it tries to auto-detect the value      |
