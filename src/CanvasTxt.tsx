@@ -8,7 +8,11 @@ export namespace CanvasTxt {
         vAlign?: "middle" | "top" | "bottom"
         fontSize?: number
         font?: string
-        lineHeight?: number | null
+        lineHeight?: number
+        fontStyle?: string
+        fontVariant?: string
+        fontWeight?: string
+        justify?: boolean
         x: number
         y: number
         width: number
@@ -29,13 +33,17 @@ export default class CanvasTxt extends React.Component<CanvasTxt.Props, never> {
 
     componentDidMount() {
         const ctx = this.ref.current.getContext('2d')
-        const { debug, align, vAlign, fontSize, font, lineHeight, x, y, width, height } = this.props.drawTxtProps || {}
+        const { debug, align, vAlign, fontSize, font, lineHeight, x, y, width, height, fontStyle, fontVariant, fontWeight, justify = false } = this.props.drawTxtProps || {}
+        canvasTxt.fontSize = fontSize
         canvasTxt.debug = debug
         canvasTxt.align = align
         canvasTxt.vAlign = vAlign
-        canvasTxt.fontSize = fontSize
         canvasTxt.font = font
+        canvasTxt.fontStyle = fontStyle
+        canvasTxt.fontVariant = fontVariant
+        canvasTxt.fontWeight = fontWeight
         canvasTxt.lineHeight = lineHeight
+        canvasTxt.justify = justify
         canvasTxt.drawText(ctx, this.props.text, x, y, width, height)
     }
 

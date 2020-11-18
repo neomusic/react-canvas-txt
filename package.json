@@ -1,6 +1,6 @@
 {
   "name": "react-canvas-txt",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "React implementation of https://github.com/geongeorge/canvas-txt",
   "scripts": {
     "build": "rm -rf ./dist/** && tsc",
@@ -47,6 +47,6 @@
     "react-dom": "*"
   },
   "dependencies": {
-    "canvas-txt": "^2.0.6"
+    "canvas-txt": "^3.0.0"
   }
 }
