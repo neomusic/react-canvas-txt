@@ -1,2 +1,2 @@
-import CanvasTxt from './CanvasTxt';
-export default CanvasTxt
+import CanvasTxt from "./CanvasTxt";
+export default CanvasTxt;

@@ -1,74 +1,34 @@
 {
   "defaultSeverity": "error",
-  "extends": [
-    "tslint:recommended"
-  ],
+  "extends": ["tslint:recommended"],
   "jsRules": {},
   "rules": {
     "no-unnecessary-type-assertion": true,
-    "array-type": [
-      true,
-      "array"
-    ],
-    "ban": [
-      true,
-      "setInterval",
-      "setTimeout"
-    ],
+    "array-type": [true, "array"],
+    "ban": [true, "setInterval", "setTimeout"],
     "ban-types": {
       "options": [
-        [
-          "Object",
-          "Avoid using the `Object` type. Did you mean `object`?"
-        ],
+        ["Object", "Avoid using the `Object` type. Did you mean `object`?"],
         [
           "Function",
           "Avoid using the `Function` type. Prefer a specific function type, like `() => void`, or use `ts.AnyFunction`."
         ],
-        [
-          "Boolean",
-          "Avoid using the `Boolean` type. Did you mean `boolean`?"
-        ],
-        [
-          "Number",
-          "Avoid using the `Number` type. Did you mean `number`?"
-        ],
-        [
-          "String",
-          "Avoid using the `String` type. Did you mean `string`?"
-        ]
+        ["Boolean", "Avoid using the `Boolean` type. Did you mean `boolean`?"],
+        ["Number", "Avoid using the `Number` type. Did you mean `number`?"],
+        ["String", "Avoid using the `String` type. Did you mean `string`?"]
       ]
     },
     "boolean-trivia": true,
     "class-name": true,
-    "comment-format": [
-      true,
-      "check-space"
-    ],
-    "curly": [
-      true,
-      "ignore-same-line"
-    ],
+    "comment-format": [true, "check-space"],
+    "curly": [true, "ignore-same-line"],
     "debug-assert": true,
-    "indent": [
-      true,
-      "spaces"
-    ],
-    "interface-name": [
-      true,
-      "never-prefix"
-    ],
+    "indent": [true, "spaces"],
+    "interface-name": [true, "never-prefix"],
     "interface-over-type-literal": true,
     "jsdoc-format": true,
-    "linebreak-style": [
-      true,
-      "LF"
-    ],
-    "next-line": [
-      true,
-      "check-catch",
-      "check-else"
-    ],
+    "linebreak-style": [true, "LF"],
+    "next-line": [true, "check-catch", "check-else"],
     "no-bom": true,
     "no-double-space": true,
     "no-eval": true,
@@ -78,31 +38,16 @@
     "no-internal-module": true,
     "no-null-keyword": true,
     "no-switch-case-fall-through": true,
-    "no-trailing-whitespace": [
-      true,
-      "ignore-template-strings"
-    ],
+    "no-trailing-whitespace": [true, "ignore-template-strings"],
     "no-type-assertion-whitespace": true,
     "no-unnecessary-qualifier": true,
     "no-var-keyword": true,
     "object-literal-shorthand": true,
     "object-literal-surrounding-space": true,
-    "one-line": [
-      true,
-      "check-open-brace",
-      "check-whitespace"
-    ],
+    "one-line": [true, "check-open-brace", "check-whitespace"],
     "prefer-const": true,
-    "quotemark": [
-      true,
-      "single",
-      "avoid-escape"
-    ],
-    "semicolon": [
-      true,
-      "always",
-      "ignore-bound-class-methods"
-    ],
+    "quotemark": [true, "single", "avoid-escape"],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
     "space-within-parens": true,
     "triple-equals": true,
     "type-operator-spacing": true,
@@ -132,14 +77,8 @@
       "check-separator",
       "check-type"
     ],
-    "no-implicit-dependencies": [
-      true,
-      "dev"
-    ],
-    "object-literal-key-quotes": [
-      true,
-      "consistent-as-needed"
-    ],
+    "no-implicit-dependencies": [true, "dev"],
+    "object-literal-key-quotes": [true, "consistent-as-needed"],
     "variable-name": [
       true,
       "ban-keywords",
